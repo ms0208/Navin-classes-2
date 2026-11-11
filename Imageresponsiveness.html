@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image responsiveness</title>
+</head>
+<body>
+    <img src="Navinclasses.png" srcset="Navinclasses.png 10000w"
+    alt="Navinclasses">
+     <img src="Navinclasses.png" srcset="Navinclasses.png 10000w"
+    alt="Navinclasses">
+
+    <picture>
+        <source media="(max-width: 60px)" srcset="Navinclasses.png 5000w">
+        <source media="(max-width: 120px)" srcset="Navinclasses.png">
+        <img src="Navinclasses.png" alt="Navinclasses">
+    </picture>
+</body>
+</html>
