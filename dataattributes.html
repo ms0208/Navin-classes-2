@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<button data-product-id="501" data-price="299">Add to cart</button>
+<h1 data-profit-id="001" data-profit="300"></h1>
+<script>
+  const b = document.querySelector('button');
+  console.log(b.dataset.price);  // "501" (camelCase)
+   b.addEventListener('click', (event) => {
+    // Access data-product-id via camelCase: dataset.productId
+    console.log(b.dataset.productId); 
+  });
+  const c = document.querySelector('h1');
+  console.log(c.dataset.profitId);  // "001" (camelCase)
+</script>
+
+</body>
+</html>
