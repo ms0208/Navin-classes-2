@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Global Attributes Demo</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #f4f6f9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .card {
+            background: #e8f0fe;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .featured {
+            border: 2px solid #2563eb;
+        }
+
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .drag-box {
+            background: #d1fae5;
+            padding: 20px;
+            width: 200px;
+            cursor: grab;
+        }
+
+        .drop-area {
+            border: 2px dashed #999;
+            padding: 30px;
+            margin-top: 15px;
+        }
+
+        [popover] {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 id="intro" class="main-heading">
+        HTML Global Attributes
+    </h1>
+
+    <!-- 1. id -->
+    <h2>1. ID Attribute</h2>
+    <p id="uniquePara">
+        This paragraph has a unique ID.
+    </p>
+
+    <!-- 2. class -->
+    <h2>2. Class Attribute</h2>
+    <div class="card featured">
+        This element has two classes: card and featured.
+    </div>
+
+    <!-- 3. style -->
+    <h2>3. Style Attribute</h2>
+    <p style="color: red; font-size: 20px;">
+        This text uses inline CSS.
+    </p>
+
+    <!-- 4. title -->
+    <h2>4. Title Attribute</h2>
+    <button title="Click this button to learn HTML">
+        Hover Over Me
+    </button>
+
+    <!-- 5. lang -->
+    <h2>5. Lang Attribute</h2>
+    <p lang="hi">
+        नमस्ते! आप कैसे हैं?
+    </p>
+
+    <!-- 6. dir -->
+    <h2>6. Dir Attribute</h2>
+    <p dir="rtl">
+        This text direction is right to left.
+    </p>
+
+    <!-- 7. hidden -->
+    <h2>7. Hidden Attribute</h2>
+    <p hidden>
+        You cannot see this paragraph.
+    </p>
+
+    <p id="hiddenText" hidden>
+        JavaScript has made this paragraph visible!
+    </p>
+
+    <button onclick="showHidden()">
+        Show Hidden Text
+    </button>
+
+    <!-- 8. tabindex -->
+    <h2>8. Tabindex Attribute</h2>
+    <p tabindex="0">
+        You can focus on this paragraph using the Tab key.
+    </p>
+
+    <button tabindex="1">First Button</button>
+    <button tabindex="2">Second Button</button>
+
+    <!-- 9. contenteditable -->
+    <h2>9. Contenteditable Attribute</h2>
+    <p contenteditable="true">
+        Click here and edit this text.
+    </p>
+
+    <!-- 10. draggable -->
+    <h2>10. Draggable Attribute</h2>
+
+    <div class="drag-box"
+         draggable="true"
+         id="dragItem"
+         ondragstart="dragStart(event)">
+        Drag Me
+    </div>
+
+    <div class="drop-area"
+         ondragover="allowDrop(event)"
+         ondrop="dropItem(event)">
+        Drop Here
+    </div>
+
+    <!-- 11. spellcheck -->
+    <h2>11. Spellcheck Attribute</h2>
+
+    <textarea spellcheck="true">
+        This is a texxt with a spelling mistake.
+    </textarea>
+
+    <br><br>
+
+    <textarea spellcheck="false">
+        This is a texxt with spellcheck disabled.
+    </textarea>
+
+    <!-- 12. translate -->
+    <h2>12. Translate Attribute</h2>
+
+    <p translate="no">
+        APPWARS TECHNOLOGIES
+    </p>
+
+    <p translate="yes">
+        Welcome to our website.
+    </p>
+
+    <!-- 13. accesskey -->
+    <h2>13. Accesskey Attribute</h2>
+
+    <button accesskey="s" onclick="alert('Shortcut activated!')">
+        Press Alt + S (Windows) or Control + Option + S (Mac)
+    </button>
+
+    <!-- 14. inert -->
+    <h2>14. Inert Attribute</h2>
+
+    <div inert>
+        <p>This section is non-interactive.</p>
+        <button>Disabled by inert</button>
+        <a href="#">This link cannot be focused or clicked.</a>
+    </div>
+
+    <!-- 15. popover -->
+    <h2>15. Popover Attribute</h2>
+
+    <button popovertarget="myPopover">
+        Open Popover
+    </button>
+
+    <div id="myPopover" popover>
+        <h3>HTML Popover</h3>
+        <p>This is a declarative HTML popover.</p>
+        <button popovertarget="myPopover"
+                popovertargetaction="hide">
+            Close
+        </button>
+    </div>
+
+</div>
+
+<script>
+
+    // Hidden Attribute
+    function showHidden() {
+        document.getElementById("hiddenText").hidden = false;
+    }
+
+    // Draggable Attribute
+    function dragStart(event) {
+        event.dataTransfer.setData(
+            "text/plain",
+            event.target.id
+        );
+    }
+
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+
+    function dropItem(event) {
+        event.preventDefault();
+
+        const id = event.dataTransfer.getData("text/plain");
+        const element = document.getElementById(id);
+
+        event.target.closest(".drop-area").appendChild(element);
+    }
+
+</script>
+
+</body>
+</html>
