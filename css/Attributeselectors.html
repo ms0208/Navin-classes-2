@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Attribute Selectors</title>
+
+    <style>
+        /* 1. [disabled] - Selects elements having the disabled attribute */
+       input[disabled] {
+            background-color:red;
+            cursor: not-allowed;
+        }
+
+        /* 2. [type="email"] - Selects elements with an exact attribute value */
+        input[type="email"] {
+            border: 2px solid blue;
+        }
+        input[type="text"] {
+            border:10px solid purple;
+        }
+
+        /* 3. [class~="btn"] - Selects if a class word exists in the list */
+        [class~="naveen"] {
+            background-color: orange;
+            color: white;
+        }
+
+        /* 4. [lang|="en"] - Selects en or values starting with en- */
+        [lang|="en"] {
+            color: green;
+        }
+
+        /* 5. [href^="https"] - Selects href values starting with https */
+        a[href^="https"] {
+            color: blue;
+        }
+
+        /* 6. [href$=".pdf"] - Selects href values ending with .pdf */
+        a[href$=".pdf"] {
+            color: red;
+            font-weight: bold;
+        }
+
+        /* 7. [href*="google"] - Selects href values containing google */
+        a[href*="google"] {
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Attribute Selectors</h1>
+
+    <h2>1. Disabled Attribute Selector</h2>
+    <input type="text" placeholder="Enabled input">
+    <br><br>
+    <input type="text" placeholder="Disabled input" disabled>
+
+    <h2>2. Exact Attribute Value</h2>
+    <input type="email" placeholder="Enter your email">
+    <input type="text" placeholder="Enter your name">
+
+    <h2>3. Space-Separated Value Selector</h2>
+    <button class="btn primary">Button 1</button>
+    <button class="primary btn">Button 2</button>
+    <button class="naveen">Button 3</button>
+
+    <h2>4. Language Attribute Selector</h2>
+    <p lang="en">English language paragraph</p>
+    <p lang="en-US">English US paragraph</p>
+    <p lang="fr">French language paragraph</p>
+
+    <h2>5. Starts With Selector</h2>
+    <a href="https://www.google.com">Google HTTPS Link</a>
+    <br>
+    <a href="http://example.com">HTTP Link</a>
+
+    <h2>6. Ends With Selector</h2>
+    <a href="notes.pdf">Download PDF</a>
+    <br>
+    <a href="notes.html">Open HTML File</a>
+
+    <h2>7. Contains Selector</h2>
+    <a href="https://www.google.com">Google Website</a>
+    <br>
+    <a href="https://www.youtube.com">YouTube Website</a>
+
+</body>
+</html>
