@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template and Slot</title>
+</head>
+<body>
+    <template id="card-tpl">
+
+        <div class="card">
+            <slot name="title">Default title</slot>
+            <slot></slot>
+        </div>
+
+    </template>
+
+    <user-card>
+        <h2 slot="title">Welcome to APPWARS</h2>
+        <p>I am learning HTML Web Components.</p>
+    </user-card>
+
+    <user-card>
+        <h2 slot="title">JavaScript Course</h2>
+        <p>Learning Template and Slot.</p>
+    </user-card>
+
+</body>
+
+</html>
+
+</body>
+
+</html>

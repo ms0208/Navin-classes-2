@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <details open>
+        <summary>What is HTML?</summary>
+        <p>HyperText Markup Language.</p> 
+        <h1>Naveen</h1>
+    </details>
+
+    <dialog id="dlg">
+        <form method="dialog">
+            <p>Are you sure?</p>
+            <button value="ok">OK</button><button value="cancel">Cancel</button>
+        </form>
+    </dialog>
+    <button onclick="dlg.showModal()">Open</button>
+
+    <button popovertarget="tip">Info</button>
+    <div id="tip" popover>Popover content (closes on outside click / Esc)</div>
+
+</body>
+
+</html>

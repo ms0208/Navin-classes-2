@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop</title>
+
+</head>
+
+<body>
+
+    <div id="box" draggable="true">Drag me</div>
+
+    <div id="zone">Drop here</div>
+
+    <script>
+        const box = document.getElementById("box");
+        const zone = document.getElementById("zone");
+
+        // 1. When dragging starts
+        box.addEventListener("dragstart", function(e) {
+            e.dataTransfer.setData("text", e.target.id);
+        });
+
+        // 2. Allow dropping
+        zone.addEventListener("dragover", function(e) {
+            e.preventDefault();
+        });
+
+        // 3. When element is dropped
+        zone.addEventListener("drop", function(e) {
+            e.preventDefault();
+
+            const id = e.dataTransfer.getData("text");
+
+            const draggedElement = document.getElementById(id);
+
+            zone.append(draggedElement);
+        });
+    </script>
+
+</body>
+</html>

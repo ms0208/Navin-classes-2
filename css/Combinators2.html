@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS Combinators Demo</title>
+
+    <style>
+        /* 1. Descendant selector (space)
+           Selects any <a> anywhere inside <nav> */
+        nav a {
+            color: pink;
+        }
+
+        .li1 {
+            color: brown;
+        }
+
+        /* 2. Child selector (>)
+           Selects only direct child <li> of <ul> */
+        ul>div {
+            color: green;
+        }
+
+        /* 3. Adjacent sibling (+)
+           Selects the <p> immediately after <h2> */
+        h2+p{
+            color: red;
+        }
+
+        /* 4. General sibling (~)
+           Selects all <p> elements after <h2>
+           at the same parent level */
+        h2~h1{
+            color: purple;
+        }
+
+        /* 5. Column combinator (||)
+           Selects cells belonging to the second table column */
+        col.second {
+            background-color: yellow;
+        }
+        col.first{
+            background-color: red;
+        }
+    </style>
+</head>
+
+<>
+
+    <h1>CSS Combinators Demo</h1>
+
+    <!-- Descendant selector -->
+    <nav>
+        <div>
+            <a href="#">Home</a>
+        </div>
+
+        <div>
+            <section>
+                <a href="#">About</a>
+            </section>
+        </div>
+    </nav>
+
+    <!-- Child selector -->
+    <ul>
+        <li class="li1">Direct Child 1</li>
+        <li>Direct Child 2</li>
+
+        <div>
+            <li>Nested Child (not selected by ul > li)</li>
+        </div>
+    </ul>
+    
+        <!-- Adjacent + General sibling -->
+        <h2>Heading 2</h2>
+        <h1>Manav</h1>
+        <h1>Naveen</h1>
+        <h1>ABC</h1>
+        <p>Paragraph 1 (immediately after h2)</p>
+        <div>Some div content</div>
+    <!-- Column combinator -->
+    <table border="1">
+        <colgroup>
+            <col class="first">
+            <col class="second">
+            <col>
+        </colgroup>
+
+        <tr>
+            <td>Column 1</td>
+            <td>Column 2</td>
+            <td>Column 3</td>
+        </tr>
+
+        <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+            <td>Data 3</td>
+        </tr>
+    </table>
+
+    </body>
+
+</html>
