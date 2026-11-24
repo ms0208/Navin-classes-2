@@ -1,0 +1,368 @@
+
+/* =========================================
+   GENERAL STYLING
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+    margin: 0;
+    padding: 25px;
+}
+
+header {
+    background: #0f172a;
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+section {
+    background: white;
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+}
+
+h2 {
+    color: #2563eb;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+button,
+input,
+a {
+    margin: 8px 0;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+input {
+    padding: 12px;
+    border: 2px solid #cbd5e1;
+    border-radius: 6px;
+}
+
+
+/* =========================================
+   1. USER INTERACTION PSEUDO-CLASSES
+========================================= */
+
+/* :hover */
+.demo-btn:hover {
+    background: royalblue;
+    color: white;
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+/* :active */
+.active-btn:active {
+    background: crimson;
+    color: white;
+    transform: scale(0.95);
+}
+
+/* :focus */
+input:focus {
+    border-color: blue;
+    outline: 3px solid lightblue;
+}
+
+/* :focus-visible */
+button:focus-visible,
+a:focus-visible {
+    outline: 3px dashed orange;
+    outline-offset: 4px;
+}
+
+/* :focus-within */
+.focus-box {
+    padding: 20px;
+    border: 2px solid gray;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.focus-box:focus-within {
+    background: #dbeafe;
+    border-color: blue;
+}
+
+
+/* =========================================
+   2. LINK PSEUDO-CLASSES (LVHA)
+========================================= */
+
+/* :link */
+.demo-link:link {
+    color: blue;
+}
+
+/* :visited */
+.demo-link:visited {
+    color: purple;
+}
+
+/* :hover */
+.demo-link:hover {
+    color: red;
+    text-decoration: none;
+}
+
+/* :active */
+.demo-link:active {
+    color: orange;
+}
+
+
+/* =========================================
+   3. FORM STATE PSEUDO-CLASSES
+========================================= */
+
+/* :checked */
+input[type="checkbox"]:checked {
+    accent-color: green;
+}
+
+/* :disabled */
+input:disabled {
+    background: #e5e7eb;
+    color: gray;
+    cursor: not-allowed;
+}
+
+/* :enabled */
+input:enabled {
+    background-color: #f8fafc;
+}
+
+/* :required */
+input:required {
+    border-left: 5px solid orange;
+}
+
+/* :optional */
+input:optional {
+    border-left: 5px solid gray;
+}
+
+/* :read-only */
+input:read-only {
+    background: #e2e8f0;
+    cursor: default;
+}
+
+/* :placeholder-shown */
+input:placeholder-shown {
+    background: #fffde7;
+}
+
+/* :indeterminate */
+input:indeterminate {
+    outline: 3px solid orange;
+}
+
+/* :default */
+button:default {
+    border: 2px solid green;
+}
+
+/* :in-range */
+input[type="number"]:in-range {
+    background: #dcfce7;
+}
+
+/* :out-of-range */
+input[type="number"]:out-of-range {
+    background: #fee2e2;
+    border-color: red;
+}
+
+
+/* =========================================
+   4. VALIDATION PSEUDO-CLASSES
+========================================= */
+
+/* :valid */
+input:valid {
+    border-color: green;
+}
+
+/* :invalid */
+input:invalid {
+    border-color: red;
+}
+
+/* :user-valid */
+input:user-valid {
+    background: #dcfce7;
+}
+
+/* :user-invalid */
+input:user-invalid {
+    background: #fee2e2;
+}
+
+
+/* =========================================
+   5. STRUCTURAL PSEUDO-CLASSES
+========================================= */
+
+/* :first-child */
+.list-demo li:first-child {
+    background: lightgreen;
+}
+
+/* :last-child */
+.list-demo li:last-child {
+    background: lightcoral;
+}
+
+/* :only-child */
+.empty-box:only-child {
+    background: gold;
+}
+
+/* :nth-child(2n+1) - odd children */
+.list-demo li:nth-child(2n+1) {
+    color: darkblue;
+    font-weight: bold;
+}
+
+/* :nth-last-child() */
+.list-demo li:nth-last-child(2) {
+    background: #c4b5fd;
+}
+
+/* :first-of-type */
+.type-demo p:first-of-type {
+    color: red;
+}
+
+/* :nth-of-type() */
+.type-demo h3:nth-of-type(2) {
+    color: purple;
+}
+
+/* :empty */
+.empty-box:empty {
+    height: 50px;
+    border: 2px dashed gray;
+    background: #fef3c7;
+}
+
+/* :root */
+:root {
+    --primary-color: #2563eb;
+    --dark-color: #1e293b;
+}
+
+/* Use root variable */
+h2 {
+    color: var(--primary-color);
+}
+
+
+/* =========================================
+   6. LOGICAL / FUNCTIONAL PSEUDO-CLASSES
+========================================= */
+
+/* :not() */
+.item:not(.active) {
+    background: #e2e8f0;
+}
+
+/* :is() */
+:is(h2, h3, h4) {
+    font-family: Arial, sans-serif;
+}
+
+/* :where() - zero specificity */
+:where(.logic-demo, .card-container) p {
+    padding: 8px;
+}
+
+/* :has() - parent selector */
+.card:has(.badge) {
+    border: 3px solid orange;
+    background: #fff7ed;
+}
+
+/* :nth-child(2n of .item) */
+.logic-demo p:nth-child(2n of .item) {
+    background: lightblue;
+}
+
+
+/* =========================================
+   7. OTHER PSEUDO-CLASSES
+========================================= */
+
+/* :target */
+#target-section:target {
+    background: #fef3c7;
+    border: 3px solid orange;
+    padding: 20px;
+}
+
+/* :lang() */
+p:lang(en) {
+    font-style: italic;
+}
+
+/* :dir() */
+.direction-box:dir(rtl) {
+    background: #dbeafe;
+    padding: 15px;
+}
+
+/* :fullscreen */
+:fullscreen {
+    background: black;
+    color: white;
+}
+
+/* :popover-open */
+[popover]:popover-open {
+    background: #dcfce7;
+    border: 2px solid green;
+    padding: 20px;
+}
+
+/* :modal */
+dialog:modal {
+    border: 3px solid blue;
+    border-radius: 10px;
+}
+
+/* :defined */
+* :defined {
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+}

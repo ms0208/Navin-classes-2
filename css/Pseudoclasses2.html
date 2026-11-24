@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Pseudo Classes Demo</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+
+    <header>
+        <h1>CSS Pseudo-Classes Demonstration</h1>
+        <p>Explore hover, focus, form states, structural and logical selectors.</p>
+    </header>
+
+    <!-- 1. User Interaction -->
+    <section>
+        <h2>1. User Interaction Pseudo-Classes</h2>
+
+        <button class="demo-btn">Hover Me</button>
+
+        <button class="active-btn">Click and Hold Me</button>
+
+        <input type="text" placeholder="Focus on this input">
+
+        <div class="focus-box">
+            Click inside this box or focus its child input.
+            <input type="text" placeholder="Focus within this box">
+        </div>
+    </section>
+
+    <!-- 2. Link Pseudo-Classes -->
+    <section>
+        <h2>2. Link Pseudo-Classes (LVHA)</h2>
+
+        <a href="https://www.google.com" class="demo-link">
+            Visit Google
+        </a>
+
+        <a href="https://www.wikipedia.org" class="demo-link">
+            Visit Wikipedia
+        </a>
+    </section>
+
+    <!-- 3. Form State -->
+    <section>
+        <h2>3. Form State Pseudo-Classes</h2>
+
+        <label>
+            <input type="checkbox">
+            Accept Terms
+        </label>
+
+        <input type="text" placeholder="Enabled input">
+
+        <input type="text" disabled value="Disabled input">
+
+        <input type="text" required placeholder="Required field">
+
+        <input type="text" readonly value="Read-only field">
+
+        <input type="number" min="10" max="50" placeholder="Enter 10 to 50">
+
+        <input type="checkbox" class="indeterminate-check">
+    </section>
+
+    <!-- 4. Validation -->
+    <section>
+        <h2>4. Validation Pseudo-Classes</h2>
+
+        <form>
+            <input type="email" required placeholder="Enter valid email">
+
+            <input type="text" minlength="3" required
+                   placeholder="Minimum 3 characters">
+
+            <button type="submit">Submit Form</button>
+        </form>
+    </section>
+
+    <!-- 5. Structural -->
+    <section>
+        <h2>5. Structural Pseudo-Classes</h2>
+
+        <ul class="list-demo">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+            <li>Item 5</li>
+            <li>Item 6</li>
+        </ul>
+
+        <div class="type-demo">
+            <p>Paragraph 1</p>
+            <h3>Heading 1</h3>
+            <p>Paragraph 2</p>
+            <h3>Heading 2</h3>
+        </div>
+
+        <div class="empty-box"></div>
+    </section>
+
+    <!-- 6. Logical -->
+    <section>
+        <h2>6. Logical and Functional Pseudo-Classes</h2>
+
+        <div class="logic-demo">
+            <p class="item">Normal Item</p>
+            <p class="item active">Active Item</p>
+            <p class="item">Normal Item</p>
+            <p class="special">Special Item</p>
+        </div>
+
+        <div class="card-container">
+            <div class="card">
+                <h3>Card 1</h3>
+                <p>Normal card</p>
+            </div>
+
+            <div class="card">
+                <h3>Card 2</h3>
+                <p>Contains special content</p>
+                <span class="badge">Special</span>
+            </div>
+
+            <div class="card">
+                <h3>Card 3</h3>
+                <p>Normal card</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Other -->
+    <section>
+        <h2>7. Other Pseudo-Classes</h2>
+
+        <a href="#target-section">Jump to Target</a>
+
+        <p lang="en">This is an English paragraph.</p>
+
+        <div dir="rtl" class="direction-box">
+            This content uses right-to-left direction.
+        </div>
+
+        <div id="target-section">
+            <h3>Target Section</h3>
+            <p>This section becomes highlighted when targeted.</p>
+        </div>
+
+        <button popovertarget="demo-popover">Open Popover</button>
+
+        <div id="demo-popover" popover>
+            This is a popover element.
+        </div>
+
+        <dialog open>
+            This is a modal dialog demonstration.
+        </dialog>
+    </section>
+
+    <footer>
+        <p>CSS Pseudo-Classes Practice</p>
+    </footer>
+
+</body>
+</html>
