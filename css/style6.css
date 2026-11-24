@@ -1,0 +1,372 @@
+
+/* ========================================
+   GENERAL STYLING
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 25px;
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+header {
+    text-align: center;
+    background: #0f172a;
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+section {
+    background: white;
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+h2 {
+    color: #2563eb;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+button,
+input,
+textarea {
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+}
+
+button {
+    border: none;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* ========================================
+   1. ::BEFORE AND ::AFTER
+======================================== */
+
+.before-after {
+    background: #dbeafe;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 8px;
+}
+
+/* Insert content before the element */
+.before-after::before {
+    content: "★ ";
+    color: orange;
+    font-size: 28px;
+}
+
+/* Insert content after the element */
+.before-after::after {
+    content: " ★";
+    color: crimson;
+    font-size: 28px;
+}
+
+/* Tooltip using ::before */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    padding: 15px;
+    background: #e2e8f0;
+    cursor: pointer;
+}
+
+/* Tooltip content */
+.tooltip::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: #0f172a;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: 105%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    border: 8px solid transparent;
+    border-top-color: #0f172a;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.tooltip:hover::before,
+.tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ========================================
+   2. ::FIRST-LETTER AND ::FIRST-LINE
+======================================== */
+
+/* First letter styling */
+.typography::first-letter {
+    font-size: 50px;
+    font-weight: bold;
+    color: crimson;
+    float: left;
+    margin-right: 8px;
+}
+
+/* First line styling */
+.typography::first-line {
+    color: darkblue;
+    font-weight: bold;
+}
+
+
+/* ========================================
+   3. ::PLACEHOLDER
+======================================== */
+
+input::placeholder {
+    color: gray;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+input:focus::placeholder {
+    color: #93c5fd;
+}
+
+
+/* ========================================
+   4. ::SELECTION
+======================================== */
+
+.select-text::selection {
+    background: orange;
+    color: black;
+}
+
+::selection {
+    background: #2563eb;
+    color: white;
+}
+
+
+/* ========================================
+   5. ::MARKER
+======================================== */
+
+/* Bullet styling */
+.marker-list li::marker {
+    color: crimson;
+    font-size: 22px;
+}
+
+/* Number styling */
+.number-list li::marker {
+    color: green;
+    font-weight: bold;
+}
+
+
+/* ========================================
+   6. ::BACKDROP
+======================================== */
+
+dialog {
+    border: none;
+    border-radius: 12px;
+    padding: 30px;
+    width: min(400px, calc(100% - 32px));
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+dialog::backdrop {
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(5px);
+}
+
+
+/* ========================================
+   7. ::FILE-SELECTOR-BUTTON
+======================================== */
+
+input[type="file"]::file-selector-button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background: #1d4ed8;
+}
+
+
+/* ========================================
+   8. ::PART() AND ::SLOTTED
+======================================== */
+
+/* Styling a shadow part exposed by custom-card */
+custom-card::part(card) {
+    display: block;
+    background: #dbeafe;
+    border: 2px solid #2563eb;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Styling the slotted paragraph from outside */
+custom-card::slotted(p) {
+    color: darkblue;
+    font-weight: bold;
+}
+
+
+/* ========================================
+   9. VIEW TRANSITIONS
+======================================== */
+
+/* Animate the old page snapshot */
+::view-transition-old(root) {
+    animation: fade-out 0.4s ease forwards;
+}
+
+/* Animate the new page snapshot */
+::view-transition-new(root) {
+    animation: fade-in 0.4s ease forwards;
+}
+
+@keyframes fade-out {
+    to {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Named transition for a specific element */
+.transition-box {
+    view-transition-name: demo-box;
+    background: #dbeafe;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+::view-transition-old(demo-box),
+::view-transition-new(demo-box) {
+    animation-duration: 0.5s;
+}
+
+::view-transition-old(demo-box) {
+    animation-name: fade-out;
+}
+
+::view-transition-new(demo-box) {
+    animation-name: fade-in;
+}
+
+
+/* ========================================
+   10. ::HIGHLIGHT()
+======================================== */
+
+/* Custom Highlight API styling */
+::highlight(my-highlight) {
+    background: yellow;
+    color: red;
+    text-decoration: underline;
+    text-decoration-color: crimson;
+}
+
+
+/* ========================================
+   11. ::SPELLING-ERROR
+======================================== */
+
+.spell-text {
+    width: 100%;
+    min-height: 100px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* Browser spelling error decoration */
+.spell-text::spelling-error {
+    text-decoration: wavy underline red;
+}
+
+/* Grammar error decoration */
+.spell-text::grammar-error {
+    text-decoration: wavy underline blue;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    section {
+        padding: 15px;
+    }
+}

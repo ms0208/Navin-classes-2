@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Pseudo Elements</title>
+    <link rel="stylesheet" href="style6.css">
+</head>
+<body>
+
+    <header>
+        <h1>CSS Pseudo-Elements</h1>
+        <p>Explore generated content, typography and special element styling.</p>
+    </header>
+
+    <!-- 1. BEFORE & AFTER -->
+    <section>
+        <h2>1. ::before and ::after</h2>
+
+        <div class="before-after">
+            CSS Generated Content
+        </div>
+
+        <p class="tooltip" data-tooltip="This is a CSS tooltip">
+            Hover over this text
+        </p>
+    </section>
+
+    <!-- 2. FIRST LETTER & FIRST LINE -->
+    <section>
+        <h2>2. ::first-letter and ::first-line</h2>
+
+        <p class="typography">
+            CSS pseudo-elements allow developers to style specific parts of
+            an element without adding extra HTML elements. The first letter
+            and first line can be styled differently to create beautiful
+            typography and editorial layouts.
+        </p>
+    </section>
+
+    <!-- 3. PLACEHOLDER -->
+    <section>
+        <h2>3. ::placeholder</h2>
+
+        <input type="text" placeholder="Enter your full name">
+
+        <input type="email" placeholder="Enter your email address">
+    </section>
+
+    <!-- 4. SELECTION -->
+    <section>
+        <h2>4. ::selection</h2>
+
+        <p class="select-text">
+            Select this paragraph using your mouse to see the custom
+            selection color.
+        </p>
+    </section>
+
+    <!-- 5. MARKER -->
+    <section>
+        <h2>5. ::marker</h2>
+
+        <ul class="marker-list">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+        </ul>
+
+        <ol class="number-list">
+            <li>Learn HTML</li>
+            <li>Learn CSS</li>
+            <li>Learn JavaScript</li>
+        </ol>
+    </section>
+
+    <!-- 6. BACKDROP -->
+    <section>
+        <h2>6. ::backdrop</h2>
+
+        <button id="open-dialog">Open Modal</button>
+
+        <dialog id="my-dialog">
+            <h3>Modal Dialog</h3>
+            <p>The background behind this dialog is styled using ::backdrop.</p>
+            <button id="close-dialog">Close Dialog</button>
+        </dialog>
+    </section>
+
+    <!-- 7. FILE SELECTOR BUTTON -->
+    <section>
+        <h2>7. ::file-selector-button</h2>
+
+        <input type="file">
+    </section>
+
+    <!-- 8. WEB COMPONENTS -->
+    <section>
+        <h2>8. ::part() and ::slotted()</h2>
+
+        <custom-card>
+            <p slot="description">
+                This paragraph is inserted into a slot.
+            </p>
+        </custom-card>
+    </section>
+
+    <!-- 9. VIEW TRANSITION -->
+    <section>
+        <h2>9. ::view-transition-*</h2>
+
+        <div class="transition-box" id="transition-box">
+            View Transition Demo
+        </div>
+
+        <button id="transition-btn">Change View</button>
+    </section>
+
+    <!-- 10. HIGHLIGHT -->
+    <section>
+        <h2>10. ::highlight()</h2>
+
+        <p id="highlight-text">
+            CSS allows developers to highlight specific words inside text
+            using the Custom Highlight API.
+        </p>
+    </section>
+
+    <!-- 11. SPELLING ERROR -->
+    <section>
+        <h2>11. ::spelling-error</h2>
+
+        <textarea spellcheck="true" class="spell-text">
+CSS is awsome and beautifull.
+        </textarea>
+
+        <p>
+            Spelling-error styling depends on browser support and the
+            browser's spell-checking system.
+        </p>
+    </section>
+
+    <footer>
+        <p>CSS Pseudo-Elements Practical</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
