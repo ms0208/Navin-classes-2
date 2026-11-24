@@ -1,0 +1,6 @@
+ li:nth-child(2){
+color:red;
+}
+li:nth-child(4){
+    color:blue;
+}

@@ -1,0 +1,221 @@
+
+/* ======================================
+   GENERAL STYLING
+====================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 25px;
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+header {
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+section {
+    background: white;
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 12px;
+}
+
+section > h2 {
+    color: #2563eb;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+p {
+    line-height: 1.7;
+}
+
+button,
+input {
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+}
+
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* ======================================
+   1. :is() SELECTOR
+   Groups selectors
+====================================== */
+
+/* Select h1, h2, h3 inside article */
+article :is(h1, h2, h3) {
+    color: crimson;
+    font-family: Georgia, serif;
+}
+
+
+
+/* Select headings in multiple containers */
+:is(.is-section, .where-section) h3 {
+    background: #3f77c0;
+    padding: 10px;
+}
+
+
+/* ======================================
+   2. :where() SELECTOR
+   Zero specificity
+====================================== */
+
+/* All headings and paragraphs inside container */
+.container :where(h2, h3, p) {
+    color: darkblue;
+    margin-bottom: 15px;
+}
+
+/* Default button styling with zero specificity */
+:where(button) {
+    background: teal;
+    color: white;
+    border-radius: 8px;
+}
+
+/* Default form styles */
+:where(input, button) {
+    font-size: 16px;
+}
+
+
+/* ======================================
+   3. :not() SELECTOR
+   Excludes matching elements
+====================================== */
+
+/* Select all students except passed students */
+.students li:not(.passed) {
+    background: #fee2e2;
+    color: darkred;
+    padding: 12px;
+    margin: 8px 0;
+}
+
+/* Select all paragraphs except highlighted ones */
+.not-demo p:not(.highlight) {
+    background: #e2e8f0;
+    padding: 10px;
+}
+
+/* Select every list item except the last one */
+.students li:not(:last-child) {
+    border-bottom: 2px solid gray;
+}
+
+
+/* ======================================
+   4. :has() SELECTOR
+   Parent / relational selector
+====================================== */
+
+/* Card containing an image */
+.card:has(img) {
+    border: 3px solid green;
+    background: #dcfce7;
+}
+
+/* Card without an image */
+.card:not(:has(img)) {
+    border: 3px solid orange;
+    background: #fff7ed;
+}
+
+/* Form box changes when an input gets focus */
+.form-box:has(input:focus) {
+    border: 3px solid blue;
+    background: #dbeafe;
+}
+
+/* Article containing an h3 */
+article:has(h3) {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Card containing a paragraph */
+.card:has(p) {
+    padding: 20px;
+}
+
+
+/* ======================================
+   CARD DESIGN
+====================================== */
+
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1 1 250px;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+/* ======================================
+   FORM DESIGN
+====================================== */
+
+.form-box {
+    margin-top: 30px;
+    padding: 20px;
+    border: 2px solid #cbd5e1;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.form-box input {
+    width: 100%;
+    border: 1px solid gray;
+    outline: none;
+}
+
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+}

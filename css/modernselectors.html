@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Logical Pseudo Classes</title>
+    <link rel="stylesheet" href="style5.css">
+</head>
+<body>
+
+    <header>
+        <h1>CSS Logical Pseudo-Classes</h1>
+        <p>Learn :is(), :where(), :not() and :has()</p>
+    </header>
+
+    <!-- 1. IS -->
+    <section class="is-section">
+        <h2>1. :is() Selector</h2>
+
+        <article>
+            <h1>Article Heading 1</h1>
+            <h2>Article Heading 2</h2>
+            <h3>Article Heading 3</h3>
+
+            <p>
+                This paragraph contains a
+                <a href="#">sample link</a>.
+            </p>
+        </article>
+
+        <div class="is-demo">
+            <h2 class="H2">Another Heading</h2>
+            <h3 class="H3">Another Subheading</h3>
+            <p>Normal paragraph text.</p>
+        </div>
+    </section>
+
+    <!-- 2. WHERE -->
+    <section class="where-section">
+        <h2>2. :where() Selector</h2>
+
+        <div class="container">
+            <h2>Container Heading</h2>
+            <h3>Container Subheading</h3>
+            <p>Paragraph inside container.</p>
+            <button>Click Me</button>
+        </div>
+    </section>
+
+    <!-- 3. NOT -->
+    <section class="not-section">
+        <h2>3. :not() Selector</h2>
+
+        <ul class="students">
+            <li class="passed">Student 1 - Passed</li>
+            <li class="failed">Student 2 - Failed</li>
+            <li class="passed">Student 3 - Passed</li>
+            <li class="failed">Student 4 - Failed</li>
+            <li>Student 5 - Not evaluated</li>
+        </ul>
+
+        <div class="not-demo">
+            <p class="highlight">Highlighted paragraph</p>
+            <p>Normal paragraph</p>
+            <p class="highlight">Another highlighted paragraph</p>
+            <p>Normal paragraph</p>
+        </div>
+    </section>
+
+    <!-- 4. HAS -->
+    <section class="has-section">
+        <h2>4. :has() Selector</h2>
+
+        <div class="cards">
+
+            <article class="card">
+                <h3>Card 1</h3>
+                <p>This card contains an image.</p>
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400"
+                     alt="Nature landscape">
+            </article>
+
+            <article class="card">
+                <h3>Card 2</h3>
+                <p>This card does not contain an image.</p>
+            </article>
+
+            <article class="card">
+                <h3>Card 3</h3>
+                <p>This card contains an image.</p>
+                <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=400"
+                     alt="Mountain landscape">
+            </article>
+
+        </div>
+
+        <div class="form-box">
+            <h3>Focus Example</h3>
+            <input type="text" placeholder="Enter your name">
+            <input type="email" placeholder="Enter your email">
+        </div>
+    </section>
+
+</body>
+</html>
